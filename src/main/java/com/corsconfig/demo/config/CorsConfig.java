@@ -18,14 +18,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
     //指定允许跨域的多个域
-    private static final String[] ALLOWED_ORIGINS = {"http://www.baidu.com","http://127.0.0.1:1999","https://blog.csdn.net"};
+    private static final String[] ALLOWED_ORIGINS = {"http://www.baidu.com","http://127.0.0.1:81","https://blog.csdn.net"};
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         //添加跨域的cors配置
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/home/**").   //可以被跨域的路径,/**表示无限制,
+                registry.addMapping("/goods/**").   //可以被跨域的路径,/**表示无限制,
                         allowedOrigins(ALLOWED_ORIGINS). //允许跨域的域名，如果值为*,则表示允许任何域名使用
                         allowedMethods("*"). //允许任何方法，值可以为： "GET", "POST" ...
                         allowedHeaders("*"). //允许任何请求头

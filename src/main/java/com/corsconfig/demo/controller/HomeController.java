@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 public class HomeController {
 
     //允许跨域多个值
-    @CrossOrigin(origins = {"http://127.0.0.1:1999","http://127.0.0.1:81","http://cas.baidu.com","http://do.baidu.com"})
+    @CrossOrigin(origins = {"http://127.0.0.1:1999","http://127.0.0.1:81","http://cas.baidu.com","http://do.baidu.com"},maxAge = 3600)
     @GetMapping
     @RequestMapping("/home")
     public String home() {
